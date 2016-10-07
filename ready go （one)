@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Theme Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+    #footer{
+      width:100%;
+      height:100px;
+      text-align:center;
+      margin-top:-30px;
+      background-color:#eee;
+    }
+    img{
+      width:100%;
+      height:200px;
+    }
+    body{
+      width:98%;
+      margin:0 auto;
+    }
+  
+    </style>
+</head>
+<body role="document">
+    <img src="http://img2.niutuku.com/desk/anime/1105/1105-2899.jpg" />
+   <div class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">首页</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">文章</a></li>
+              <li><a href="#about">相册</a></li>
+              <li><a href="#contact">Blog</a></li>
+              <li class="dropdown" onmouseover="display(this)" onmouseout="hide(this)">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">论坛 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">学累了玩一会</a></li>
+                  <li><a href="#">LOL</a></li>
+                  <li><a href="#">CF</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">单挑十万小学生</li>
+                  <li><a href="#">王者荣耀</a></li>
+                  <li><a href="#">梦幻西游3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+   <div class="jumbotron">
+   <h3>不同年龄段的取舍</h3>
+   <p>“<small><i>短的是人生，长的是磨难。</i></small>”<br/>
+　　
+　　   <b>二十岁时</b><br/>
+　　　　该不再计较自己的家庭出身，不再计较父母的职业，十几岁时，会和别的孩子比较家庭出身，但如果到了‘弱冠’之年，还弱不禁风，尚无自立之志，出身贫贱的还为家庭自卑，老觉得抬不起头来。出身富豪的还处处依靠父母，在家庭荫护下养尊处优，那就会一辈子都没出息。<br/>
+　　　　<b>三十岁时</b><br/>
+　　　　已成家立业，为父为母。有了几年家庭生活的经验。大丈夫该不再计较妻子的容貌，深知贤惠比美貌更重要。会过日子媳妇比会打扮的媳妇更让人待见；老婆该不再计较老公的身高，明白能力比身高更有作用。相关信息。</p>
+   <h3>世事如落花，心境自空明</h3>
+      <p><small><i>“拈花一笑心自静。”</i></small><br/>
+　　
+　　只需拈花一笑，万千心事尽在其中。往事的脚步轻了，悄悄地走过岁月。一笑于休闲处，坐看时光着地成灰。生活仍是一片宁静。禅在心中，悟自心生。<br/>
+　　
+　　<b>得失随缘泯恩怨</b><br/>
+　　
+　　晨钟幕鼓，缘起缘灭皆由天，保留一种恬然一份悠闲，守一窗灯光，与一份淡淡的心境，让清澈的思绪净化岁月的浮华，爱恨不过在一线间，相逢一笑恩仇泯。<br/>
+　　
+　　<b>知足长乐悟人生</b><br/>
+　　
+　　看尘缘于道，千年落花,万世流水,终随时光归去了无痕迹。瞬息不可留，永恒不可及，缘起，缘尽，早有缘定，随心生活得失荣辱皆安于心。
+　　</p>
+   </div>
+   <div id="footer" >
+   <p><a class="btn btn-xs btn-info" href="#">关于加时代</a> <a class="btn btn-xs btn-info" href="#">广告服务</a> <a class="btn btn-xs btn-info" href="#">加时代招聘</a> <a class="btn btn-xs btn-info" href="#"> 客服中心</a> <a class="btn btn-xs btn-info" href=http://www.qq.com> qq留言 </a> <a  class="btn btn-xs btn-info" href="#">网站管理</a> <a class="btn btn-xs btn-info" href="#"> 会员登录 </a> <a class="btn btn-xs btn-info" href="#">购物车 </a> </p>
+   <p><small>Copyright@2006-2008 Yang HUI.All Rights Reserved<small>
+   </p>
+   </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    function display(li){
+      var a=li.getElementsByTagName("ul")[0];
+      a.style.display="block";
+    }
+    function hide(li){
+      var b=li.getElementsByTagName("ul")[0];
+      b.style.display="none";
+    }
+
+
+    </script>
+</body>
+</html>
