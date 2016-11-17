@@ -1,0 +1,22 @@
+{
+  "about.html": {
+    "href": "about.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/framework7.ios.min.css",
+      "css/framework7.ios.colors.min.css",
+      "css/my-app.css",
+      "js/framework7.min.js",
+      "js/my-app.js"
+    ],
+    "refer": [
+      "about.html"
+    ],
+    "priority": 0
+  }
+}

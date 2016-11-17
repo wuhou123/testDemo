@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- meta标签设置-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+     maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- app标题 -->
+    <title>hangge</title>
+   <style type="text/css">
+
+
+
+
+   </style>
+  </head>
+  <body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- 左侧面板，显示隐藏时带有效果（reveal effect）-->
+    <div class="panel panel-right panel-reveal">
+      <div class="content-block">
+        <p>这里放置左测面板内容。</p>
+        <ul>
+          <li>品牌介绍</li>
+          <li>简介</li>
+          <li>这是什么</li>
+          <li>测试</li>
+          <li>前端</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 所有的Views视图 -->
+    <div class="views">
+      <!-- 主视图（需要有"view-main"样式） -->
+      <div class="view view-main">
+        <!-- 顶部导航栏 -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- 标题元素（为了让页面切换时标题文字有滑动效果，添加sliding样式） -->
+            <div class="center sliding">欢迎您</div>
+            <div class="right">
+              <!--
+                导航栏右侧只有一个图标（"icon-only"样式）
+                “open-panel”样式表示点击时打开左侧面板
+              -->
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- 页面容器（Pages container）由于我们使用了固定位置的navbar和toolbar，
+              所以这里添加额外样式（navbar-through和toolbar-through）-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- 首页, "data-page" 里设置页面名字 -->
+          <div data-page="index" class="page">
+            <!-- 支持滚动的页面内容 -->
+            <div class="page-content">
+              <p>这里是首页内容。</p>
+                <!-- 导航到另一个页面 -->
+              <a href="about.html">跳转到“关于”页面</a><br/>
+              <a href="chat.html">聊天页面</a>      
+              
+
+
+
+            
+            </div>
+          </div>
+        </div>
+        <!-- 底部工具栏 -->     
+      </div>
+    </div>
+    <!-- Framework7框架的js-->
+    <script type="text/javascript" src="./js/framework7.min.js"></script>
+    <!-- 你的应用的js -->
+    <script type="text/javascript" src="./js/my-app.js">
+     
+
+
+
+
+
+    </script>
+  </body>
+</html>
