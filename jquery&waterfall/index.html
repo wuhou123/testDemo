@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>使用瀑布流</title>
+<style type="text/css">
+html{color:#000;background:#FFF}
+body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+body,div,p{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+img{border:0 none;}
+a{text-decoration:none;outline:none;}/*去除超链接的虚线框*/
+a:hover{text-decoration:underline;}
+a:active{star:expression(this.onFocus=this.blur())}
+a:focus{outline:none;}
+
+/*字体(unicode)：宋体(\5B8B\4F53)黑体(\9ED1\4F53)微软雅黑(\5FAE\8F6F\96C5\9ED1)*/
+body{font:12px/1.5 \5B8B\4F53,sans-serif;}
+/* 瀑布流样式 */
+.waterfall{
+	overflow:hidden;
+	zoom:1;
+	width:1000px;	
+	margin:0 auto;
+}
+.wf_inner{margin:5px auto;}
+.wf_col{position:relative;min-height:473px;_height:473px;}
+.wf_item{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o--moz-box-sizing:border-box;
+	width:235px;
+	border:1px solid #eee;	
+	color:#565656;
+	float:left;
+	overflow:hidden;
+	zoom:1;
+	position:absolute;
+}
+.wf_item:hover{
+	border:1px solid #e5dcdc;
+	box-shadow:1px 1px 3px;
+}
+.wf_item_inner{margin:5px;}
+.wf_item .thumb{
+	background:#E9E9E9;
+	position:relative;
+	display:block;
+	overflow:hidden;
+	font-size:0;	
+}
+
+.wf_item .thumb_img{width:100%;max-width:100%;-ms-interpolation-mode:bicubic;/*解决IE7缩放图片会失真*/}
+.wf_item .thumb img{
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.wf_item .thumb img:hover{
+	-moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2,1.2);
+    -o-transform: scale(1.2, 1.2);    
+    transform: scale(1.2, 1.2);
+}
+.wf_item .title{height:27px;margin:7px 0 0;color:#538700;font-size:17px;font-family:\5FAE\8F6F\96C5\9ED1;}
+.wf_item .title a{color:#060;}
+.wf_item .desc{word-wrap:break-word;word-break:break-all;color:#888;}
+.wf_result{height:32px;line-height:32px;margin-top:15px;text-align:center;color:#666;}
+#backTop:hover{background-position:0 0;}
+/* end 瀑布流样式 */
+</style>
+</head>
+<body>
+<div id="waterfall"></div>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.waterfall.js"></script>
+<script type="text/javascript">
+$(function(){
+	// 一次性全部加载到本地，再部分显示
+	// $('#waterfall').waterfall({
+	// 	url: 'http://127.0.0.1/demo/waterfall/js/json.js',
+	// 	perNum: 5,			// 每次显示五个
+	// 	ajaxTimes: 1 		// 只发送一次请求
+	// });
+	
+	
+	// 按需加载方式
+	var wf_page = 0;
+	$('#waterfall').waterfall({
+		// 自定义跨域请求
+		ajaxFunc: function(success, error){
+			$.ajax({
+				type: 'GET',
+				url: 'http://www.wookmark.com/api/json/popular?callback=?',
+				cache: false,
+				data: {'page': ++wf_page},
+				dataType:'jsonp',
+				timeout: 60000,
+				success: success,
+				error: error
+			});
+		},
+		createHtml: function(data){
+			return '<div class="wf_item_inner">' +
+					  '<a href="'+ data.url +'" class="thumb" target="_self">' +
+						'<img class="thumb_img"  src="'+ data.preview +'" />' +
+					  '</a>' +
+					  '<p class="desc" style="margin-top:1px;text-align:center">'+ data.title +'</p>' +
+					   +
+				  '</div>';
+		}
+	});
+});
+
+
+</script>
+</body>
+</html>
