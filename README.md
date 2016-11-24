@@ -1,5 +1,5 @@
-#text_demo
-######instruction
+#text_demo ######instruction
+
 ###一、markdown基本语法
 ######发现编辑的不好，要学习了
 1. 标题设置（让字体变大，和word的标题意思一样）
