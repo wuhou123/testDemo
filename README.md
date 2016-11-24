@@ -1,4 +1,4 @@
-#text_demo instruction^编者2016-11-24
+#text_demo instruction<sub>编者2016-11-24</sub>
 
 ###一、markdown基本语法
 ######发现编辑的不好，要学习了
