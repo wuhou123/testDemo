@@ -62,9 +62,11 @@ hello[^hello]
  
 
 
+###搭建自己的个人平台
+1.发现一个好的网站可以展示自己的页面，比github的pages功能要好，有需要的看教程吧   http://www.qdfuns.com/notes/32858/d95db4e64b1c4fec96b414fc884d8293.html
 
-发现一个好的网站可以展示自己的页面，比github的pages功能要好，有需要的看教程吧 http://www.qdfuns.com/notes/32858/d95db4e64b1c4fec96b414fc884d8293.html
-
-更新
-
-just find the interesting demo
+#更新部分
+######just find the interesting demo 
+#####2016-11-24 上传了无限瀑布流借鉴插件，样式已修改好
+#####2016-11-23 上传全屏轮播图支持滑动事件和其他基本功能
+#####2016-11-17 上传一些有趣的demo
