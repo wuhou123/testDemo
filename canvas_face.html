@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>滑稽</title>
+<style type="text/css">
+    #mycanvas{
+        margin:60px auto;
+        display: block;
+        border:1px solid #333;
+    }
+    #mycanvas:hover{
+        transform:translate3d(0,-3px,0);
+        box-shadow: 0px 0px 3px #333;
+        
+    }
+</style>
+</head>
+<body>
+    <canvas id="mycanvas" width="640" height="500"></canvas>
+    <script>
+        var it=document.getElementById("mycanvas");
+        var myCanvas=it.getContext("2d");
+        myCanvas.arc(320,225,200,0,2*Math.PI);
+        var myPen=myCanvas.createRadialGradient(320,225,140,320,225,200);
+        myPen.addColorStop(0,"#f0e720");
+        myPen.addColorStop(1,"#ffca3c");
+        myCanvas.fillStyle=myPen;
+        myCanvas.fill();
+        //嘴
+        myCanvas.beginPath();
+        myCanvas.arc(320,225, 140,0,2*Math.PI);
+        myCanvas.fillStyle="#7f2e00";
+        myCanvas.fill();
+        myCanvas.beginPath();
+        myCanvas.arc(320,215,140, 0, 2*Math.PI);
+        myCanvas.fillStyle="#f0e720";
+        myCanvas.fill();
+        //左边眉毛
+        myCanvas.beginPath();
+        myCanvas.moveTo(162,78);
+        myCanvas.quadraticCurveTo(189,22,235,95);
+        myCanvas.quadraticCurveTo(194,44,162,78);
+        myCanvas.fillStyle = "#000";
+        myCanvas.fill();
+        myCanvas.stroke();
+        myCanvas.closePath();
+        //右边眉毛
+        myCanvas.beginPath();
+        myCanvas.moveTo(472,78);
+        myCanvas.quadraticCurveTo(445,22,399,95);
+        myCanvas.quadraticCurveTo(448,44,472,78);
+        myCanvas.fill();
+        myCanvas.stroke();
+        myCanvas.closePath();
+        //左眼
+        myCanvas.lineWidth = 5;
+        myCanvas.strokeStyle = "#75291c";
+        myCanvas.beginPath();
+        myCanvas.moveTo(136,127);
+        myCanvas.bezierCurveTo(176,100,226,100,266,127);
+        myCanvas.bezierCurveTo(272,134,268,146,256,147);
+        myCanvas.bezierCurveTo(226,124,176,124,140,147);
+        myCanvas.bezierCurveTo(126,142,126,134,136,127);
+        myCanvas.stroke();
+        myCanvas.fillStyle = "#fff";
+        myCanvas.fill();
+
+        myCanvas.beginPath();
+        myCanvas.fillStyle = "#333";
+        myCanvas.arc(156,128,16,0,2*Math.PI,true);
+        myCanvas.fill();
+        myCanvas.closePath();
+        //右眼
+        myCanvas.beginPath();
+        myCanvas.moveTo(372,127);
+        myCanvas.bezierCurveTo(412,100,462,100,502,127);
+        myCanvas.bezierCurveTo(508,134,504,146,492,147);
+        myCanvas.bezierCurveTo(462,124,412,124,376,147);
+        myCanvas.bezierCurveTo(362,142,362,134,372,127);
+        myCanvas.stroke();
+        myCanvas.fillStyle = "#fff";
+        myCanvas.fill();
+
+        myCanvas.beginPath();
+        myCanvas.fillStyle = "#333";
+        myCanvas.arc(392,128,16,0,2*Math.PI,true);
+        myCanvas.fill();
+        myCanvas.closePath();
+
+        //脸颊
+        myCanvas.beginPath();
+        myCanvas.strokeStyle = "#fd9100";
+        myCanvas.fillStyle = "#fd9100";
+        EllipseTwo(myCanvas,200,160,26,12);
+        myCanvas.fill();
+        myCanvas.stroke();
+
+        myCanvas.beginPath();
+        myCanvas.strokeStyle = "#fd9100";
+        myCanvas.fillStyle = "#fd9100";
+        EllipseTwo(myCanvas,436,160,26,12);
+        myCanvas.fill();
+        myCanvas.stroke();
+
+
+        function EllipseTwo(context, x, y, a, b) {
+            context.save();
+            var r = (a > b) ? a : b;
+            var ratioX = a / r;
+            var ratioY = b / r;
+            context.scale(ratioX, ratioY);
+            context.beginPath();
+            context.arc(x / ratioX, y / ratioY, r, 0, 2 * Math.PI, false);
+            context.closePath();
+            context.restore();
+            context.stroke();
+        }
+        function change(){
+
+        }
+    </script>
+</body>
+</html>
