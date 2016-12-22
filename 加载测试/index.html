@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	
+    <!-- meta标签设置-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+     maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- app标题 -->    
+    <title>hangge</title>
+    
+    <!-- 使用iOS CSS主题样式-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- iOS related颜色样式 -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- 自定义样式-->
+    <link rel="stylesheet" href="css/my-app.css">
+     <!--testlingke-->    
+    <link rel="stylesheet" href="./jquerycss/pullToRefresh.css" />
+    <script src="./jquery/iscroll.js"></script>
+    <script src="./jquery/pullToRefresh.js"></script>
+    <script src="./jquery/colorful.js"></script>
+    <!--testlingke end-->
+    
+  </head>
+  <body>
+  	
+    <!-- 所有的Views视图 -->
+    <div class="views">
+      <!-- 主视图（需要有"view-main"样式） -->
+      <div class="view view-main">
+        <!-- 顶部导航栏 -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- 标题元素（为了让页面切换时标题文字有滑动效果，添加sliding样式） -->
+            <div class="left">
+              <a href="#" class="back link">
+              <i class="icon icon-back"></i>
+              <span>返回</span>
+              </a>
+            </div>
+            <div class="center sliding">玩转铃客</div>
+            <div class="right">
+              <!--导航栏右侧只有一个图标（"icon-only"样式）-->
+              <a href="testlingke.html" class="link"><i class="icon icon-form-name"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- 页面容器（Pages container）由于我们使用了固定位置的navbar和toolbar，
+              所以这里添加额外样式（navbar-through和toolbar-through）-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- 首页, "data-page" 里设置页面名字 -->
+          <div data-page="index" class="page">
+            <!-- 支持滚动的页面内容 -->
+            <div class="page-content">
+              <p>欢迎来到玩转铃客...</p>
+              <div class="bumen">业务部门：
+                <select multiple>
+                  <option value="信息技术部">信息技术部</option>
+                  <option value="企划部">企划部</option>
+                  <option value="市场部">市场部</option>
+                  <option value="财务部">财务部</option>
+                  <option value="人力资源部">人力资源部</option>             
+                </select>
+                </div>
+              
+
+              <div id="main" style="width: 300px;height:200px;"></div>
+<div class="list-block" style="margin-top:-15px">
+  <ul>
+  
+<!-- 日期 -->
+        <li>
+     <div class="item-content" style="padding-left:0px">        
+        <div class="item-inner" style="padding-right:0px">
+          <div class="item-title label" style="font-size:14px">需求创建日期：</div>
+          <div class="item-input">
+            <input type="date" placeholder="Birth day" value="2014-04-30" style="font-size:12px;margin-left:-25px;height:25px;line-height:25px;text-align:right;background:#efeded;">
+
+          </div>
+          <input type="date" placeholder="Birth day" value="2014-04-30" style="font-size:12px;margin-left:-40px;height:25px;line-height:25px;text-align:right;background:#efeded;">
+          <input type="submit"  value="统计" id="tongji1">
+        </div>
+      </div>
+    </li>
+    <li>
+       
+            <select multiple>
+                  <option value="信息技术部">已发布</option>
+                  <option value="企划部">未发布</option>  
+            </select>
+      
+    </li>
+  </ul>
+</div>
+
+
+
+              <!-- 导航到另一个页面 -->
+              
+            
+        </div>
+        <!-- 底部工具栏 -->
+        <div class="toolbar">
+          
+            <!-- 工具栏链接 --> 
+            <div class="toolbar-inner">            
+            <a href="" class="link"><i class="icon icon-form-comment"></i></a>
+            <a href="about.html" class="link" style="color:#000;">应用攻略</a>
+            <a href="#" class="link create-links" style="color:#000;">铃客课堂</a>
+            <a href="./yingyong/chatus.html" class="link" style="color:#000;">联系我们</a>
+          </div>
+
+      </div>
+  
+            
+         
+        </div>
+      </div>
+    </div>
+    <!-- Framework7框架的js-->    
+<script src="./js/jquery-2.0.0.min.js"></script>
+    <script src="./js/echarts.simple.min.js"></script>    
+
+<script type="text/javascript" src="http://www.163css.com/myweb/hihilinxuan/template/hihilinxuan/cssjs/2012/12/ifengtouch/js/jquery.touchSwipe.min.js"></script>
+
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+         
+    <!-- 你的应用的js -->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
