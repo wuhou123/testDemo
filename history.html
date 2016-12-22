@@ -1,0 +1,38 @@
+<!-- 这个页面由于会通过Ajax加载，所以我们不需要实现完整的布局，只需添加.navbar和.page即可-->
+<!-- 顶部导航栏 -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon icon-back"></i>
+        <span>返回</span>
+       </a>
+    </div>
+    <div class="center sliding">查看历史消息</div>
+
+  </div>
+</div>
+<div class="pages">
+ <div data-page="history" class="page">
+  <!-- Search Bar -->
+  <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+    <div class="searchbar-input">
+      <input type="search" placeholder="搜索"><a href="#" class="searchbar-clear"></a>
+    </div><a href="#" class="searchbar-cancel">取消</a>
+  </form>
+ 
+  <!-- Search Bar overlay -->
+  <div class="searchbar-overlay"></div>
+ 
+  <div class="page-content">
+    <!-- This block will be displayed if nothing found -->
+    <div class="content-block searchbar-not-found">
+      <div class="content-block-inner" style="color:#949489">正在查找，请查看正确关键字！</div>
+    </div>
+ 
+    <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+    <div id="history_contents" class="list-block list-block-search searchbar-found">
+    
+    </div>
+  </div>
+</div>  
