@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>智慧时空 管理中心-数据查看 </title>
+<meta name="Copyright" content="Douco Design." />
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery.tab.js"></script>
+<!--echarts-->
+<script src="js/echarts.min.js"></script> 
+</head>
+<body>
+<div id="dcWrap">
+ <div id="dcHead">
+ <div id="head">
+  <div class="logo"><a href="index.html"><img src="./background/logo.png" alt="logo"></a></div>
+  <div class="nav">
+   <ul>
+    <li class="M"><a href="JavaScript:void(0);" class="topAdd">新建</a>
+     <div class="drop mTopad"><a href="product.php?rec=add">商品</a> <a href="article.php?rec=add">文章</a> <a href="nav.php?rec=add">自定义导航</a> <a href="show.html">首页幻灯</a> <a href="page.php?rec=add">单页面</a> <a href="manager.php?rec=add">管理员</a> <a href="link.html"></a> </div>
+    </li>
+    <li><a href="../index.php" target="_blank">查看站点</a></li>
+    <li><a href="index.php?rec=clear_cache">清除缓存</a></li>
+    <li><a href="http://help.douco.com" target="_blank">帮助</a></li>
+    <li class="noRight"><a href="module.html">DouPHP+</a></li>
+   </ul>
+   <ul class="navRight">
+    <li class="M noLeft"><a href="JavaScript:void(0);">您好，admin</a>
+     <div class="drop mUser">
+      <a href="manager.php?rec=edit&id=1">编辑我的个人资料</a>
+      <a href="manager.php?rec=cloud_account">设置云账户</a>
+     </div>
+    </li>
+    <li class="noRight"><a href="login.php?rec=logout">退出</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+<!-- dcHead 结束 --> <div id="dcLeft"><div id="menu">
+  <li><a href="#"><i class="managerLog"></i></a></li>
+
+ </ul>  
+</div></div>
+ <div id="dcMain">
+   <!-- 当前位置 -->
+</div>   
+<div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+   <h3>数据查看</h3>
+    <div class="idTabs">
+      <ul class="tab">
+        <li><a href="#shengli" id="shengli_a">生理数据</a></li>
+        <li><a href="#sport" id="sport_a">运动信息</a></li>
+      </ul>
+      <div class="items">      
+
+        <div id="shengli">
+<!-- 三级tab --> 
+    <div class="idTabs">
+      <ul class="tab2">
+        <li><a href="#xinlv" id="xinlv_a">心率</a></li>
+        <li><a href="#xueya" >血压</a></li>
+        <li><a href="#xindiantu" id="xindiantu_a">心电图</a></li>
+      </ul>
+      <div class="items">       
+        <div id="xinlv">
+        <div class="xinlvzhangshi"></div>
+        <div id="canvas"></div>
+        <div class="gengxin"></div>
+        <div class="daochu">导出数据</div>       
+        </div>
+        <div id="xueya">
+        <div class="xinlvzhangshi2"></div>
+        <div id="canvas2"></div>
+        <div class="gengxin"></div>
+        <div class="daochu">导出数据</div> 
+        </div>
+        <div id="xindiantu">
+        <div class="xinlvzhangshi3"></div>
+        <div id="canvas3"></div>
+        <div class="gengxin"></div>
+        <div class="daochu">导出数据</div> 
+        </div>
+       </div>
+     </div>
+<!-- 三级tab结束 -->
+        </div>
+        <div id="sport">
+        <!-- 三级tab --> 
+    <div class="idTabs">
+      <ul class="tab3">
+        <li><a href="#ri" id="ri_a">日</a></li>
+        <li><a href="#yue" >月</a></li>        
+      </ul>
+      <div class="items">       
+        <div id="ri">
+        <div class="xinlvzhangshi4"></div>
+        <div id="canvas4"></div>
+        <div class="gengxin"></div>              
+        </div>
+        <div id="yue">
+        <div class="xinlvzhangshi4"></div>
+        <div id="canvas5"></div>
+        <div class="gengxin"></div>        
+        </div>  
+       </div>
+     </div>
+<!-- 三级tab结束 -->
+        </div>
+      </div>
+     </div>
+</div>
+ </div>
+ <div class="clear"></div>
+<div id="dcFooter">
+ <div id="footer">
+  <div class="line"></div>
+  <ul>
+  </ul>
+ </div>
+</div><!-- dcFooter 结束 -->
+<div class="clear"></div> </div>
+<script>
+$(function(){
+      var year=new Date().getFullYear();
+      var yue= new Date().getMonth()+1;
+      var day=new Date().getDate();      
+      $(".idTabs").idTabs();
+      $(".gengxin").html('更新于'+year+'-'+yue+'-'+day);
+      setInterval(
+      function(){
+        var second=new Date().getSeconds()+60;
+        var second2=new Date().getSeconds()+35;
+        $('.xinlvzhangshi').html('当前心率：<span class="shuzi">'+second+'</span>次/分');
+        $('.xinlvzhangshi2').html('当前血压：<span class="shuzi">'+second+'/'+second2+'</span>收缩压/舒张压');
+        $('.xinlvzhangshi3').html('BPM<span class="shuzi">'+second+'</span>&nbsp&nbsp&nbsp正常');
+        $('.xinlvzhangshi4').html('当前步数：<span class="shuzi">'+second*100+'</span>步');
+      },1000
+
+      );
+      $('#shengli_a').click(function(){
+      $('#xinlv_a').click();         
+     });
+      $('#sport_a').click(function(){
+      $('#ri_a').click();         
+     });
+
+        });
+//折线图
+    var myChart = echarts.init(document.getElementById('canvas'));
+    var myChart2 = echarts.init(document.getElementById('canvas2'));
+    var myChart3 = echarts.init(document.getElementById('canvas3'));
+    var myChart4 = echarts.init(document.getElementById('canvas4'));
+    var myChart5 = echarts.init(document.getElementById('canvas5'));       
+    myChart.showLoading();
+    myChart2.showLoading();        
+    var data = [220, 182, 191, 234, 190, 330, 310];
+    var data2= [150, 150, 120, 90, 80, 100, 103];//收缩压
+    var data3= [40, -50, 0, 35, 44, 23, 0];//舒张压
+    var markLineData = [];
+    for (var i = 1; i < data.length; i++) {
+        markLineData.push([{
+            xAxis: i - 1,
+            yAxis: data[i - 1],
+            value: (data[i] + data[i-1]).toFixed(2)
+        }, {
+            xAxis: i,
+            yAxis: data[i]
+        }]);
+    }
+
+//option
+    if(data){
+    myChart.hideLoading(); 
+    }
+    myChart.setOption(option = {
+    title: {
+        text: '虚拟数据表'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },    
+    xAxis: {
+        data: ['00:00', '4:00', '8:00', '12:00', '16:00', '20:00', '24:00']
+    },
+    yAxis: {},
+    series: [{
+        name:'心率',
+        type: 'line',
+        data:data,
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        markLine: {
+            smooth: true,
+                    effect: {
+                        show: true
+                    },
+                    distance: 10,
+            label: {
+                normal: {
+                    position: 'middle'
+                }
+            },
+            symbol: ['none', 'none'],
+            
+        }
+    }]
+});
+if(data2){
+    myChart2.hideLoading(); 
+    }
+    myChart2.setOption(option = {
+    title: {
+        text: '虚拟数据表'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['收缩压','舒张压']
+    },    
+    xAxis: {
+        data: ['00:00', '4:00', '8:00', '12:00', '16:00', '20:00', '24:00']
+    },
+    yAxis: {},
+    series: [{
+        name:'收缩压',
+        type: 'line',
+        data:data2,
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        markLine: {
+            smooth: true,
+                    effect: {
+                        show: true
+                    },
+                    distance: 10,
+            label: {
+                normal: {
+                    position: 'middle'
+                }
+            },
+            symbol: ['none', 'none'],
+            
+        }
+    },
+    {
+        name:'舒张压',
+        type: 'line',
+        data:data3,
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        markLine: {
+            smooth: true,
+                    effect: {
+                        show: true
+                    },
+                    distance: 10,
+            label: {
+                normal: {
+                    position: 'middle'
+                }
+            },
+            symbol: ['none', 'none'],
+            
+        }
+    }
+    ]
+});
+//心电图，虚构
+function randomData() {
+    now = new Date(+now + oneDay);
+    value = value + Math.random() * 21 - 10;
+    return {
+        name: now.toString(),
+        value: [
+            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('-'),
+            Math.round(value)
+        ]
+    }
+}
+
+var data = [];
+var now = +new Date(2016, 9, 3);
+var oneDay = 24 * 3600 * 1000;
+var value = Math.random() * 1000;
+for (var i = 0; i < 1000; i++) {
+    data.push(randomData());
+}
+
+setInterval(function() {
+ for (var i = 0; i < 5; i++) {
+        data.shift();
+        data.push(randomData());
+    }
+myChart3.setOption(
+option = {
+    title: {
+        text: '心率'
+    },
+    tooltip: {
+        trigger: 'axis',
+        formatter: function (params) {
+            params = params[0];
+            var date = new Date(params.name);
+            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+        },
+        axisPointer: {
+            animation: false
+        }
+    },
+    xAxis: {
+        type: 'time',
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%'],
+        splitLine: {
+            show: false
+        }
+    },
+    series: [{
+        name: '模拟数据',
+        type: 'line',
+        showSymbol: false,
+        hoverAnimation: false,
+        data: data
+    }]
+}
+      )}, 1000);
+
+//运动信息
+myChart5.setOption(option = {
+    title : {        
+        subtext: '月运动量'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['运动时间','静止时间']
+    },
+    //toolbox: {
+        //show : true,
+        //feature : {
+            //dataView : {show: true, readOnly: false},
+            //magicType : {show: true, type: ['line', 'bar']},
+           // restore : {show: true},
+            //saveAsImage : {show: true}
+        //}
+    //},
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'运动时间',
+            type:'bar',
+            data:[20000, 49000, 70000, 23200, 25300, 76700, 13560, 16220, 32600, 20000, 64000, 33000],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'静止时间',
+            type:'bar',
+            data:[2600, 5900, 9000, 2640, 2870, 7070, 1750, 1820, 480, 1800, 620, 500],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}  
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+    ]
+});
+//日运动量
+myChart4.setOption(option = {
+    title : {        
+        subtext: '日运动量'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['运动时间','静止时间']
+    },
+    //toolbox: {
+        //show : true,
+        //feature : {
+            //dataView : {show: true, readOnly: false},
+            //magicType : {show: true, type: ['line', 'bar']},
+           // restore : {show: true},
+            //saveAsImage : {show: true}
+        //}
+    //},
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data : ['0:00','2:00','4:00','6:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'运动时间',
+            type:'bar',
+            data:[2000, 4900, 7000, 2320, 2530, 7670, 1356, 1622, 3260, 2000, 6400, 3300],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'静止时间',
+            type:'bar',
+            data:[260, 590, 900, 264, 287, 707, 175, 182, 48, 180, 62, 50],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}  
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+    ]
+});
+//input
+        function focusInputLoginBox(obj) {
+            obj.addClass("form_input-focus");
+            obj.prev(".item_tip").addClass("item_tip_focus")
+        }
+        function blurInputLoginBox(obj) {
+            var v = obj.val();
+            if (v == "") {
+                obj.removeClass("form_input-focus");
+                obj.prev(".item_tip").removeClass("item_tip_focus")
+            } else {
+                obj.addClass("form_input-focus");
+                obj.prev(".item_tip").addClass("item_tip_focus")
+            }
+        }
+
+</script>
+</body>
+</html>
